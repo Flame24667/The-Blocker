@@ -1,0 +1,10 @@
+[package]
+name = "blocker-core"
+version = "0.1.0"
+edition = "2021"
+description = "Core blocking engine for The Blocker"
+license = "MIT"
+
+[lib]
+name = "blocker_core"
+path = "src/lib.rs"

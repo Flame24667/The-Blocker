@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "crates/blocker-core",
+    "crates/blocker-cli",
+    "crates/blocker-db",
+    "crates/blocker-dns",
+    "crates/blocker-api",
+]
+resolver = "2"

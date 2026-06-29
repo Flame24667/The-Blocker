@@ -1,0 +1,10 @@
+[package]
+name = "blocker-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+blocker-core = { path = "../blocker-core" }
+blocker-db = { path = "../blocker-db" }
+blocker-dns = { path = "../blocker-dns" }
+blocker-api = { path = "../blocker-api" }
