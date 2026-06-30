@@ -227,3 +227,154 @@ th[data-sort-direction="desc"]::after {
 .table-wrap.scroll-10::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.28);
 }
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(3, 6, 12, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.modal-backdrop.hidden {
+  display: none;
+}
+
+.modal-card {
+  width: min(440px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  padding: 20px;
+  background: #151922;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.45);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.icon-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  padding: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.modal-copy {
+  margin: 10px 0 18px;
+  color: #9aa6ba;
+}
+
+.modal-form {
+  display: grid;
+  gap: 14px;
+}
+
+.modal-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #f5f7fb;
+  background: rgba(255, 255, 255, 0.07);
+  outline: none;
+  font-weight: 700;
+}
+
+.modal-input:focus {
+  border-color: rgba(158, 255, 166, 0.55);
+  box-shadow: 0 0 0 3px rgba(158, 255, 166, 0.08);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.row-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blocked-table th:nth-child(1),
+.blocked-table td:nth-child(1) {
+  width: 24%;
+}
+
+.blocked-table th:nth-child(2),
+.blocked-table td:nth-child(2) {
+  width: 9%;
+}
+
+.blocked-table th:nth-child(3),
+.blocked-table td:nth-child(3) {
+  width: 16%;
+}
+
+.blocked-table th:nth-child(4),
+.blocked-table td:nth-child(4) {
+  width: 22%;
+}
+
+.blocked-table th:nth-child(5),
+.blocked-table td:nth-child(5) {
+  width: 13%;
+}
+
+.blocked-table th:nth-child(6),
+.blocked-table td:nth-child(6) {
+  width: 10%;
+}
+
+.blocked-table th:nth-child(7),
+.blocked-table td:nth-child(7) {
+  width: 6%;
+}
+
+.allowed-table th:nth-child(1),
+.allowed-table td:nth-child(1) {
+  width: 70%;
+}
+
+.allowed-table th:nth-child(2),
+.allowed-table td:nth-child(2) {
+  width: 30%;
+}
+
+.modal-error {
+  margin: -4px 0 0;
+  color: #ff9b9b;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.modal-error.hidden {
+  display: none;
+}

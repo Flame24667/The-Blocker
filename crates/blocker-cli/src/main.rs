@@ -302,10 +302,12 @@ fn run_dns_serve(command: DnsServeCommand) -> Result<(), Box<dyn Error>> {
 
     if let Some(db_path) = &command.db_path {
         let db = BlockerDb::open(db_path.as_str())?;
+        let block_count = db.list_block_domains()?.len();
         let allow_count = db.list_allow_domains()?.len();
 
-        println!("Dynamic allowlist enabled:");
+        println!("Dynamic lists enabled:");
         println!("  db: {db_path}");
+        println!("  current blocked domains: {block_count}");
         println!("  current allowed domains: {allow_count}");
         println!();
     }
@@ -363,6 +365,19 @@ fn run_dns_serve(command: DnsServeCommand) -> Result<(), Box<dyn Error>> {
                         category: None,
                         occurred_at: SystemTime::now(),
                     });
+                }
+
+                for blocked_domain in db
+                    .list_block_domains()
+                    .map_err(|error| error.to_string())?
+                {
+                    request_engine
+                        .add_block_rule(
+                            &blocked_domain,
+                            Some("db-blocklist"),
+                            Some("user"),
+                        )
+                        .map_err(|error| format!("{error:?}"))?;
                 }
 
                 for allowed_domain in db

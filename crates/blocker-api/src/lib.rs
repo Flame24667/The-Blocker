@@ -143,9 +143,39 @@ fn handle_api_request(db_path: &str, request: &HttpRequest) -> HttpResponse {
             }
         }
 
+        ("GET", "/blocked-domains") => {
+            let limit = query_param(query, "limit")
+                .and_then(|value| value.parse::<i64>().ok())
+                .unwrap_or(50);
+
+            match open_db(db_path).and_then(|db| {
+                db.blocked_domain_summaries(limit)
+                    .map_err(|error| error.to_string())
+            }) {
+                Ok(summaries) => {
+                    HttpResponse::json(200, "OK", blocked_domain_summaries_to_json(&summaries))
+                }
+                Err(error) => error_response(500, "Internal Server Error", &error),
+            }
+        }
+
         ("GET", "/allowlist") => {
             match open_db(db_path).and_then(|db| db.list_allow_domains().map_err(|e| e.to_string())) {
-                Ok(domains) => HttpResponse::json(200, "OK", domains_to_json(&domains)),
+                Ok(domains) => HttpResponse::json(200, "OK", domains_to_json("allowlist", &domains)),
+                Err(error) => error_response(500, "Internal Server Error", &error),
+            }
+        }
+
+        ("GET", "/blocklist") => {
+            match open_db(db_path).and_then(|db| {
+                db.list_block_domains()
+                    .map_err(|error| error.to_string())
+            }) {
+                Ok(domains) => HttpResponse::json(
+                    200,
+                    "OK",
+                    domains_to_json("blocklist", &domains),
+                ),
                 Err(error) => error_response(500, "Internal Server Error", &error),
             }
         }
@@ -170,15 +200,68 @@ fn handle_api_request(db_path: &str, request: &HttpRequest) -> HttpResponse {
             }
         }
 
-        ("POST", "/allow") => {
+        ("POST", "/blocklist/add") => {
             let Some(domain) = query_param(query, "domain") else {
-                return error_response(400, "Bad Request", "missing domain query parameter");
+                return error_response(400, "Bad Request", "missing domain");
             };
 
-            match open_db(db_path).and_then(|db| db.add_allow_domain(&domain).map_err(|e| e.to_string())) {
+            match open_db(db_path).and_then(|db| {
+                db.remove_allow_domain(&domain)
+                    .map_err(|error| error.to_string())?;
+
+                db.add_block_domain(&domain)
+                    .map_err(|error| error.to_string())
+            }) {
                 Ok(added) => HttpResponse::json(
                     200,
-                    "OK",
+                    "Ok",
+                    format!(
+                        r#"{{"ok":true,"domain":"{}","added":{}}}"#,
+                        json_escape(&domain),
+                        added
+                    ),
+                ),
+                Err(error) => error_response(500, "Internal Server Error", &error),
+            }
+        }
+
+        ("POST", "/blocklist/remove") => {
+            let Some(domain) = query_param(query, "domain") else {
+                return error_response(400, "Bad Request", "missing domain");
+            };
+
+            match open_db(db_path).and_then(|db| {
+                db.remove_block_domain(&domain)
+                    .map_err(|error| error.to_string())
+            }) {
+                Ok(removed) => HttpResponse::json(
+                    200,
+                    "Ok",
+                    format!(
+                        r#"{{"ok":true,"domain":"{}","removed":{}}}"#,
+                        json_escape(&domain),
+                        removed
+                    ),
+                ),
+                Err(error) => error_response(500, "Internal Server Error", &error),
+            }
+        }
+
+        ("POST", "/allow") => {
+            let Some(domain) = query_param(query, "domain") else {
+                return error_response(400, "Bad Request", "missing domain");
+            };
+
+            match open_db(db_path).and_then(|db| {
+                db.remove_block_domain(&domain)
+                    .map_err(|error| error.to_string())?;
+
+                db.add_allow_domain(&domain)
+                    .map_err(|error| error.to_string())
+            }) {
+                Ok(added) => HttpResponse::json(
+                    200,
+                    "Ok",
                     format!(
                         r#"{{"ok":true,"domain":"{}","added":{}}}"#,
                         json_escape(&domain),
@@ -340,14 +423,14 @@ fn event_to_json(event: &StoredBlockEvent) -> String {
     .replace('\n', "")
 }
 
-fn domains_to_json(domains: &[String]) -> String {
+fn domains_to_json(key: &str, domains: &[String]) -> String {
     let items = domains
         .iter()
         .map(|domain| format!(r#""{}""#, json_escape(domain)))
         .collect::<Vec<_>>()
         .join(",");
 
-    format!(r#"{{"allowlist":[{items}]}}"#)
+    format!(r#"{{"{key}":[{items}]}}"#)
 }
 
 fn json_optional_string(value: Option<&str>) -> String {
@@ -390,6 +473,36 @@ fn error_response(
             json_escape(message)
         ),
     )
+}
+
+fn blocked_domain_summaries_to_json(summaries: &[BlockedDomainSummary]) -> String {
+    let items = summaries
+        .iter()
+        .map(blocked_domain_summary_to_json)
+        .collect::<Vec<_>>()
+        .join(",");
+
+    format!(r#"{{"blocked_domains":[{items}]}}"#)
+}
+
+fn blocked_domain_summary_to_json(summary: &BlockedDomainSummary) -> String {
+    format!(
+        r#"{{
+        "domain":"{}",
+        "block_count":{},
+        "last_blocked_at_unix":{},
+        "matched_rule":{},
+        "rule_source":{},
+        "category":{}
+        }}"#,
+        json_escape(&summary.domain),
+        summary.block_count,
+        summary.last_blocked_at_unix,
+        json_optional_string(summary.matched_rule.as_deref()),
+        json_optional_string(summary.rule_source.as_deref()),
+        json_optional_string(summary.category.as_deref()),
+    )
+    .replace('\n', "")
 }
 
 impl HttpResponse {

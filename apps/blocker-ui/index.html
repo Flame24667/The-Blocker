@@ -18,7 +18,7 @@
         <div class="status-panel">
           <span id="status-badge" data-state="ok">Checking...</span>
           <button id="protection-button">Loading...</button>
-          <button id="refresh-button">Refresh</button>
+          <button id="add-domain-button">Add Domain</button>
         </div>
       </header>
 
@@ -35,11 +35,12 @@
         </div>
 
         <div class="table-wrap scroll-10">
-          <table>
+          <table class="blocked-table">
             <thead>
               <tr>
                 <th data-events-sort="domain">Domain</th>
-                <th data-events-sort="action">Action</th>
+                <th data-events-sort="block_count">Count</th>
+                <th data-events-sort="last_blocked_at_unix">Last Blocked</th>
                 <th data-events-sort="matched_rule">Matched Rule</th>
                 <th data-events-sort="rule_source">Source</th>
                 <th data-events-sort="category">Category</th>
@@ -64,7 +65,7 @@
         </div>
 
         <div class="table-wrap scroll-10">
-          <table>
+          <table class="allowed-table">
             <thead>
               <tr>
                 <th>Domain</th>
@@ -76,5 +77,40 @@
         </div>
       </section>
     </main>
+    <div id="add-domain-modal" class="modal-backdrop hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h2>Add Domain</h2>
+          <button id="close-add-domain-modal" class="icon-button" aria-label="Close">
+            ×
+          </button>
+        </div>
+
+        <p class="modal-copy">
+          Enter a domain you want The Blocker to block.
+        </p>
+
+        <form id="add-domain-form" class="modal-form">
+          <input
+            id="add-domain-input"
+            class="modal-input"
+            type="text"
+            placeholder="example.com"
+            autocomplete="off"
+          />
+          <p id="add-domain-error" class="modal-error hidden"></p>
+
+          <div class="modal-actions">
+            <button type="button" id="cancel-add-domain-button" class="secondary">
+              Cancel
+            </button>
+
+            <button type="submit">
+              Add Domain
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
