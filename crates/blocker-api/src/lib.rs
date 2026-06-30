@@ -1,4 +1,4 @@
-use blocker_db::{BlockerDb, StoredBlockEvent};
+use blocker_db::{BlockedDomainSummary, BlockerDb, StoredBlockEvent};
 use std::io::{Read, Write};
 use std::net::{SocketAddr, TcpListener, TcpStream};
 
