@@ -1,0 +1,61 @@
+# =========================
+# The Blocker - Git Ignore
+# =========================
+
+# Rust build output
+/target/
+**/target/
+
+# Rust backup files
+**/*.rs.bk
+
+# Cargo local config
+.cargo/config.toml
+
+# Tauri build output
+/apps/blocker-ui/src-tauri/target/
+/apps/blocker-ui/src-tauri/gen/
+
+# Node / Vite / frontend
+/apps/blocker-ui/node_modules/
+/apps/blocker-ui/dist/
+/apps/blocker-ui/.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local database/runtime files
+*.db
+*.db-shm
+*.db-wal
+blocker.db
+blocker-dev.db
+blocker-test.db
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Windows / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Tauri generated bundles/installers
+/apps/blocker-ui/src-tauri/target/release/bundle/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
