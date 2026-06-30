@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Blocker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./src/main.js"></script>
+  </head>
+
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>The Blocker</h1>
+          <p>Local ad and tracker blocking dashboard</p>
+        </div>
+
+        <div class="status-panel">
+          <span id="status-badge" data-state="ok">Checking...</span>
+          <button id="protection-button">Loading...</button>
+          <button id="refresh-button">Refresh</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="section-header with-tools">
+          <h2>Blocked Ads & Trackers</h2>
+
+          <input
+            id="events-search"
+            class="search-input"
+            type="search"
+            placeholder="Search blocked domains..."
+          />
+        </div>
+
+        <div class="table-wrap scroll-10">
+          <table>
+            <thead>
+              <tr>
+                <th data-events-sort="domain">Domain</th>
+                <th data-events-sort="action">Action</th>
+                <th data-events-sort="matched_rule">Matched Rule</th>
+                <th data-events-sort="rule_source">Source</th>
+                <th data-events-sort="category">Category</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="events-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-header with-tools">
+          <h2>Allowed Domains</h2>
+          
+          <input
+            id="allowlist-search"
+            class="search-input"
+            type="search"
+            placeholder="Search allowed domains..."
+          />
+        </div>
+
+        <div class="table-wrap scroll-10">
+          <table>
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="allowlist-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

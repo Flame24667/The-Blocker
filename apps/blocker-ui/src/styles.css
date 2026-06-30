@@ -1,0 +1,229 @@
+:root {
+  font-family:
+    Inter, Segoe UI, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #f5f7fb;
+  background: #101318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 900px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(80, 130, 255, 0.18), transparent 32rem),
+    #101318;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #101318;
+  background: #f5f7fb;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.small {
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+button.danger {
+  background: #ffdfdf;
+  color: #8b1a1a;
+}
+
+.app-shell {
+  padding: 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 34px;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  color: #aeb7c6;
+  margin-top: 6px;
+}
+
+.status-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#status-badge {
+  border-radius: 999px;
+  padding: 9px 12px;
+  font-weight: 800;
+  background: #1f2a1f;
+  color: #9effa6;
+}
+
+#status-badge[data-state="error"] {
+  background: #331f1f;
+  color: #ffb3b3;
+}
+
+#protection-button[data-enabled="true"] {
+  background: #ffdfdf;
+  color: #8b1a1a;
+}
+
+#protection-button[data-enabled="false"] {
+  background: #dfffe5;
+  color: #146c2e;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-wrap {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+th {
+  color: #aeb7c6;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+td {
+  color: #f5f7fb;
+  font-size: 14px;
+}
+
+.empty {
+  color: #aeb7c6;
+  text-align: center;
+  padding: 28px;
+}
+
+th[data-events-sort],
+th[data-allowlist-sort] {
+  cursor: pointer;
+  user-select: none;
+}
+
+th[data-events-sort]:hover,
+th[data-allowlist-sort]:hover {
+  color: #f5f7fb;
+}
+
+th[data-sort-direction="asc"]::after {
+  content: " ↑";
+}
+
+th[data-sort-direction="desc"]::after {
+  content: " ↓";
+}
+
+.section-header.with-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-input {
+  width: 280px;
+  max-width: 35vw;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: #f5f7fb;
+  background: rgba(255, 255, 255, 0.07);
+  outline: none;
+  font-weight: 600;
+}
+
+.search-input::placeholder {
+  color: #7f8ba0;
+}
+
+.search-input:focus {
+  border-color: rgba(158, 255, 166, 0.55);
+  box-shadow: 0 0 0 3px rgba(158, 255, 166, 0.08);
+}
+
+.table-wrap.scroll-10 {
+  max-height: 530px;
+  overflow-y: auto;
+}
+
+.table-wrap.scroll-10 thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #20252e;
+}
+
+.table-wrap.scroll-10::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.table-wrap.scroll-10::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.table-wrap.scroll-10::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.table-wrap.scroll-10::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
