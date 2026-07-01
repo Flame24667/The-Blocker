@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "The Blocker Browser Helper",
+  "version": "0.1.0",
+  "description": "Detects possible ad and tracker domains while browsing.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "webNavigation",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "the_blocker_static_rules",
+        "enabled": true,
+        "path": "rules/static_rules.json"
+      },
+      {
+        "id": "the_blocker_tracker_rules",
+        "enabled": true,
+        "path": "rules/tracker_rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://adblock.turtlecute.org/*"],
+      "css": ["src/turtlecute-cosmetic.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "The Blocker",
+    "default_popup": "src/popup.html"
+  }
+}

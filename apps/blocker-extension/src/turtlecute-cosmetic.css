@@ -1,0 +1,7 @@
+.adbox.banner_ads.adsbox,
+.textads,
+[class*="banner_ads"],
+[class*="adsbox"] {
+  display: none !important;
+  visibility: hidden !important;
+}
