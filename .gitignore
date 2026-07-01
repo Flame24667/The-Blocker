@@ -21,18 +21,25 @@
 /apps/blocker-ui/dist/
 /apps/blocker-ui/.vite/
 
-# Browser extension build/package output
+# Browser extension release/package output
+/apps/blocker-extension-release/
 /apps/blocker-extension/dist/
 /apps/blocker-extension/build/
 /apps/blocker-extension/out/
+/apps/blocker-extension/.output/
+/apps/blocker-extension/.web-ext-artifacts/
+/apps/blocker-extension/web-ext-artifacts/
+
 /apps/blocker-extension/*.zip
 /apps/blocker-extension/*.crx
 /apps/blocker-extension/*.pem
 
-# Browser extension local/test files
-/apps/blocker-extension/.web-ext-artifacts/
-/apps/blocker-extension/web-ext-artifacts/
+# Browser extension local logs
+/apps/blocker-extension/*.log
 /apps/blocker-extension/npm-debug.log*
+/apps/blocker-extension/yarn-debug.log*
+/apps/blocker-extension/yarn-error.log*
+/apps/blocker-extension/pnpm-debug.log*
 
 # Logs
 *.log
