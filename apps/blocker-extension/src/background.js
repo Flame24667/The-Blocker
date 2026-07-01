@@ -1,4 +1,8 @@
 const MAX_CANDIDATES = 100;
+const DESKTOP_API_BASE = "http://127.0.0.1:4780";
+const DESKTOP_API_TIMEOUT_MS = 1000;
+const DESKTOP_SYNC_ALARM = "the-blocker-desktop-sync";
+const DESKTOP_SYNC_PERIOD_MINUTES = 1;
 
 const RESOURCE_TYPES = [
   "main_frame",
@@ -271,7 +275,7 @@ function classifyManualDomainType(domain) {
   return "Ad";
 }
 
-async function blockDomain(domain, metadata = {}) {
+async function blockDomain(domain, metadata = {}, options = {}) {
   const normalizedDomain = String(domain ?? "").toLowerCase();
 
   if (!validateDomainName(normalizedDomain)) {
@@ -322,6 +326,9 @@ async function blockDomain(domain, metadata = {}) {
     });
 
     await updateBadge();
+    if (!options.skipDesktopSync) {
+      await syncBlockedDomainToDesktop(normalizedDomain);
+    }
     return;
   }
 
@@ -377,9 +384,12 @@ async function blockDomain(domain, metadata = {}) {
   });
 
   await updateBadge();
+  if (!options.skipDesktopSync) {
+    await syncBlockedDomainToDesktop(normalizedDomain);
+  }
 }
 
-async function unblockDomain(domain) {
+async function unblockDomain(domain, options = {}) {
   const normalizedDomain = String(domain ?? "").toLowerCase();
   const state = await getLocalState();
 
@@ -419,9 +429,12 @@ async function unblockDomain(domain) {
   });
 
   await updateBadge();
+  if (!options.skipDesktopSync) {
+    await syncAllowedDomainToDesktop(normalizedDomain);
+  }
 }
 
-async function ignoreDomain(domain, metadata = {}) {
+async function ignoreDomain(domain, metadata = {}, options = {}) {
   const normalizedDomain = String(domain ?? "").toLowerCase();
   const state = await getLocalState();
 
@@ -451,18 +464,38 @@ async function ignoreDomain(domain, metadata = {}) {
   });
 
   await updateBadge();
+  if (!options.skipDesktopSync) {
+    await syncAllowedDomainToDesktop(normalizedDomain);
+  }
 }
 
-async function clearUnblockedDomains(detectionType) {
+async function clearUnblockedDomains(detectionType, options = {}) {
   const state = await getLocalState();
+  const removedDomains = [];
 
   const filteredIgnoredDomains = state.ignoredDomains.filter((item) => {
-    return storedDetectionType(item) !== detectionType;
+    if (storedDetectionType(item) === detectionType) {
+      const domain = storedDomain(item);
+
+      if (domain) {
+        removedDomains.push(domain);
+      }
+
+      return false;
+    }
+
+    return true;
   });
 
   await setLocalState({
     ignoredDomains: filteredIgnoredDomains,
   });
+
+  if (!options.skipDesktopSync) {
+    await Promise.all(
+      removedDomains.map((domain) => syncUnallowDomainToDesktop(domain))
+    );
+  }
 
   await updateBadge();
 }
@@ -496,6 +529,152 @@ async function rebuildUserDynamicRulesWithoutMainFrame() {
     removeRuleIds,
     addRules,
   });
+}
+
+// Sync
+async function desktopApiRequest(path, options = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), DESKTOP_API_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(`${DESKTOP_API_BASE}${path}`, {
+      method: options.method || "GET",
+      signal: controller.signal,
+    });
+
+    await chrome.storage.local.set({
+      desktopBridge: {
+        connected: response.ok,
+        status: response.status,
+        lastCheckedAt: Date.now(),
+      },
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    return response;
+  } catch (error) {
+    await chrome.storage.local.set({
+      desktopBridge: {
+        connected: false,
+        error: error.message || "Desktop API offline",
+        lastCheckedAt: Date.now(),
+      },
+    });
+
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function desktopApiJson(path) {
+  const response = await desktopApiRequest(path);
+
+  if (!response) {
+    return null;
+  }
+
+  try {
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
+async function syncBlockedDomainToDesktop(domain) {
+  await desktopApiRequest(
+    `/blocklist/add?domain=${encodeURIComponent(domain)}`,
+    { method: "POST" }
+  );
+}
+
+async function syncAllowedDomainToDesktop(domain) {
+  await desktopApiRequest(
+    `/allow?domain=${encodeURIComponent(domain)}`,
+    { method: "POST" }
+  );
+}
+
+async function syncUnallowDomainToDesktop(domain) {
+  await desktopApiRequest(
+    `/unallow?domain=${encodeURIComponent(domain)}`,
+    { method: "POST" }
+  );
+}
+
+function extractDomainList(payload, key) {
+  if (!payload || !Array.isArray(payload[key])) {
+    return [];
+  }
+
+  return payload[key]
+    .map((domain) => String(domain ?? "").toLowerCase())
+    .filter((domain) => validateDomainName(domain));
+}
+
+async function syncFromDesktopApp() {
+  const [blocklistPayload, allowlistPayload] = await Promise.all([
+    desktopApiJson("/blocklist"),
+    desktopApiJson("/allowlist"),
+  ]);
+
+  if (!blocklistPayload && !allowlistPayload) {
+    return;
+  }
+
+  const desktopBlocklist = extractDomainList(blocklistPayload, "blocklist");
+  const desktopAllowlist = extractDomainList(allowlistPayload, "allowlist");
+  const allowedDomains = new Set(desktopAllowlist);
+
+  for (const domain of desktopAllowlist) {
+    await unblockDomain(domain, {
+      skipDesktopSync: true,
+    });
+  }
+
+  for (const domain of desktopBlocklist) {
+    if (allowedDomains.has(domain)) {
+      continue;
+    }
+
+    await blockDomain(
+      domain,
+      {
+        detectionType: classifyManualDomainType(domain),
+        reason: "Synced from The Blocker desktop app.",
+        requestType: "desktop-sync",
+        source: "desktop-app",
+      },
+      {
+        skipDesktopSync: true,
+      }
+    );
+  }
+
+  await updateBadge();
+}
+
+async function syncExtensionStateToDesktopApp() {
+  const state = await getLocalState();
+
+  const blockedDomains = state.blockedDomains
+    .map((item) => storedDomain(item))
+    .filter((domain) => validateDomainName(domain));
+
+  const ignoredDomains = state.ignoredDomains
+    .map((item) => storedDomain(item))
+    .filter((domain) => validateDomainName(domain));
+
+  for (const domain of blockedDomains) {
+    await syncBlockedDomainToDesktop(domain);
+  }
+
+  for (const domain of ignoredDomains) {
+    await syncAllowedDomainToDesktop(domain);
+  }
 }
 
 // turtlecute
@@ -626,13 +805,22 @@ chrome.webNavigation.onCreatedNavigationTarget.addListener((details) => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   async function handleMessage() {
     if (message.type === "GET_STATE") {
+      await syncExtensionStateToDesktopApp();
+      await syncFromDesktopApp();
+
       const state = await getLocalState();
+      const bridgeState = await chrome.storage.local.get({
+        desktopBridge: null,
+      });
+
       sendResponse({
         ok: true,
         candidates: state.candidates,
-        blockedDomains: state.blockedDomains,
         ignoredDomains: state.ignoredDomains,
+        blockedDomains: state.blockedDomains,
+        desktopBridge: bridgeState.desktopBridge,
       });
+
       return;
     }
 
@@ -694,11 +882,44 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return true;
 });
 
-Promise.all([
-  rebuildUserDynamicRulesWithoutMainFrame(),
-  installTurtlecuteHostRules(),
-])
-  .then(updateBadge)
-  .catch((error) => {
-    console.error("Startup rule installation failed:", error);
+// startup
+async function startup() {
+  await Promise.all([
+    rebuildUserDynamicRulesWithoutMainFrame(),
+    installTurtlecuteHostRules(),
+  ]);
+
+  await syncExtensionStateToDesktopApp();
+  await syncFromDesktopApp();
+  await updateBadge();
+
+  await chrome.alarms.create(DESKTOP_SYNC_ALARM, {
+    periodInMinutes: DESKTOP_SYNC_PERIOD_MINUTES,
   });
+}
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.alarms.create(DESKTOP_SYNC_ALARM, {
+    periodInMinutes: DESKTOP_SYNC_PERIOD_MINUTES,
+  });
+});
+
+chrome.runtime.onStartup.addListener(() => {
+  chrome.alarms.create(DESKTOP_SYNC_ALARM, {
+    periodInMinutes: DESKTOP_SYNC_PERIOD_MINUTES,
+  });
+});
+
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name !== DESKTOP_SYNC_ALARM) {
+    return;
+  }
+
+  syncFromDesktopApp().catch((error) => {
+    console.error("Desktop sync failed:", error);
+  });
+});
+
+startup().catch((error) => {
+  console.error("Extension startup failed:", error);
+});

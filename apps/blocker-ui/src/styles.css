@@ -305,6 +305,7 @@ th[data-sort-direction="desc"]::after {
   gap: 10px;
 }
 
+/* Table */
 .row-actions {
   display: flex;
   justify-content: flex-end;
@@ -323,6 +324,7 @@ th, td {
   white-space: nowrap;
 }
 
+/* Blocked Table */
 .blocked-table th:nth-child(1),
 .blocked-table td:nth-child(1) {
   width: 24%;
@@ -358,13 +360,19 @@ th, td {
   width: 6%;
 }
 
+/* Allowed Table */
 .allowed-table th:nth-child(1),
 .allowed-table td:nth-child(1) {
-  width: 70%;
+  width: 55%;
 }
 
 .allowed-table th:nth-child(2),
 .allowed-table td:nth-child(2) {
+  width: 15%;
+}
+
+.allowed-table th:nth-child(3),
+.allowed-table td:nth-child(3) {
   width: 30%;
 }
 

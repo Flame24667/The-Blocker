@@ -214,7 +214,7 @@ fn handle_api_request(db_path: &str, request: &HttpRequest) -> HttpResponse {
             }) {
                 Ok(added) => HttpResponse::json(
                     200,
-                    "Ok",
+                    "OK",
                     format!(
                         r#"{{"ok":true,"domain":"{}","added":{}}}"#,
                         json_escape(&domain),

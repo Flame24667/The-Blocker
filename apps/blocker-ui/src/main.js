@@ -15,7 +15,10 @@ const cancelAddDomainButton = document.querySelector("#cancel-add-domain-button"
 const addDomainForm = document.querySelector("#add-domain-form");
 const addDomainInput = document.querySelector("#add-domain-input");
 const addDomainError = document.querySelector("#add-domain-error");
+const APP_SYNC_INTERVAL_MS = 1500;
 
+let appSyncTimer = null;
+let isDashboardLoading = false;
 let protectionEnabled = true;
 let events = [];
 let allowlist = [];
@@ -98,7 +101,10 @@ function renderEvents() {
       continue;
     }
 
-    eventDomainMap.set(domain, event);
+    eventDomainMap.set(domain, {
+      ...event,
+      domain_type: getDomainType(event.domain, event.category),
+    });
   }
 
   for (const domain of blocklist) {
@@ -116,6 +122,7 @@ function renderEvents() {
         matched_rule: domain,
         rule_source: "user-blocklist",
         category: "manual",
+        domain_type: getDomainType(domain),
       });
     }
   }
@@ -150,7 +157,7 @@ function renderEvents() {
       <td>${escapeHtml(formatUnixTime(event.last_blocked_at_unix))}</td>
       <td>${escapeHtml(event.matched_rule ?? "-")}</td>
       <td>${escapeHtml(event.rule_source ?? "-")}</td>
-      <td>${escapeHtml(event.category ?? "-")}</td>
+      <td>${escapeHtml(event.domain_type ?? getDomainType(event.domain, event.category))}</td>
       <td>
         <button class="small danger" data-allow-domain="${escapeHtml(
           event.domain
@@ -190,7 +197,7 @@ function renderAllowlist() {
   if (filteredAllowlist.length === 0) {
     allowlistBody.innerHTML = `
       <tr>
-        <td colspan="2" class="empty">
+        <td colspan="3" class="empty">
           ${allowlist.length === 0 ? "No allowed domains yet." : "No matching allowed domains."}
         </td>
       </tr>
@@ -203,7 +210,7 @@ function renderAllowlist() {
   const sortedAllowlist = sortItems(
     filteredAllowlist,
     allowlistSort,
-    (domain) => domain
+    getAllowlistSortValue
   );
 
   for (const domain of sortedAllowlist) {
@@ -211,6 +218,7 @@ function renderAllowlist() {
 
     row.innerHTML = `
       <td>${escapeHtml(domain)}</td>
+      <td>${escapeHtml(classifyDomainType(domain))}</td>
       <td>
         <div class="row-actions">
           <button class="small danger" data-block-again-domain="${escapeHtml(domain)}">
@@ -228,6 +236,14 @@ function renderAllowlist() {
   }
 
   updateSortHeaders();
+}
+
+function getAllowlistSortValue(domain, key) {
+  if (key === "domain_type") {
+    return classifyDomainType(domain);
+  }
+
+  return domain;
 }
 
 function sortItems(items, sortState, valueGetter) {
@@ -255,6 +271,8 @@ function getEventSortValue(event, key) {
       return event.rule_source ?? "";
     case "category":
       return event.category ?? "";
+    case "domain_type":
+      return event.domain_type ?? getDomainType(event.domain, event.category);
     default:
       return "";
   }
@@ -313,6 +331,12 @@ function updateSortHeaders() {
 }
 
 async function loadDashboard() {
+  if (isDashboardLoading) {
+    return;
+  }
+
+  isDashboardLoading = true;
+
   try {
     await loadStatus();
     await loadAllowlist();
@@ -321,7 +345,47 @@ async function loadDashboard() {
   } catch (error) {
     console.error(error);
     setStatus("API Offline", false);
+  } finally {
+    isDashboardLoading = false;
   }
+}
+
+function shouldAutoSyncDashboard() {
+  if (document.hidden) {
+    return false;
+  }
+
+  if (
+    addDomainModal &&
+    !addDomainModal.classList.contains("hidden")
+  ) {
+    return false;
+  }
+
+  const activeElement = document.activeElement;
+
+  if (
+    activeElement &&
+    ["INPUT", "TEXTAREA", "SELECT"].includes(activeElement.tagName)
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
+function startDashboardAutoSync() {
+  if (appSyncTimer) {
+    clearInterval(appSyncTimer);
+  }
+
+  appSyncTimer = setInterval(() => {
+    if (!shouldAutoSyncDashboard()) {
+      return;
+    }
+
+    loadDashboard();
+  }, APP_SYNC_INTERVAL_MS);
 }
 
 async function toggleProtection() {
@@ -370,6 +434,105 @@ function includesSearch(value, searchTerm) {
   return String(value ?? "")
     .toLowerCase()
     .includes(searchTerm.toLowerCase());
+}
+
+function classifyDomainType(domain) {
+  const normalizedDomain = String(domain ?? "").toLowerCase();
+  const labels = normalizedDomain.split(".");
+
+  const trackerLabels = new Set([
+    "analytics",
+    "tracker",
+    "tracking",
+    "pixel",
+    "beacon",
+    "metrics",
+    "telemetry",
+  ]);
+
+  const adLabels = new Set([
+    "ad",
+    "ads",
+    "adserver",
+    "adservice",
+    "adservices",
+  ]);
+
+  const trackerDomainParts = [
+    "scorecardresearch",
+    "quantserve",
+    "analytics",
+    "tracking",
+    "tracker",
+    "pixel",
+    "beacon",
+    "metrics",
+    "telemetry",
+    "google-analytics",
+    "googletagmanager",
+    "facebook.com",
+    "connect.facebook",
+    "hotjar",
+    "segment",
+    "mixpanel",
+    "amplitude",
+    "fullstory",
+    "clarity",
+    "newrelic",
+    "nr-data",
+    "tiktok",
+    "twitter",
+    "linkedin",
+    "licdn",
+    "pinterest",
+    "reddit",
+  ];
+
+  const adDomainParts = [
+    "doubleclick",
+    "googlesyndication",
+    "googleadservices",
+    "adnxs",
+    "adsystem",
+    "adform",
+    "taboola",
+    "outbrain",
+    "popads",
+    "popcash",
+    "pagead",
+  ];
+
+  if (labels.some((label) => trackerLabels.has(label))) {
+    return "Tracker";
+  }
+
+  if (trackerDomainParts.some((part) => normalizedDomain.includes(part))) {
+    return "Tracker";
+  }
+
+  if (labels.some((label) => adLabels.has(label))) {
+    return "Ad";
+  }
+
+  if (adDomainParts.some((part) => normalizedDomain.includes(part))) {
+    return "Ad";
+  }
+
+  return "Unknown";
+}
+
+function getDomainType(domain, category) {
+  const normalizedCategory = String(category ?? "").toLowerCase();
+
+  if (normalizedCategory === "ad" || normalizedCategory === "ads") {
+    return "Ad";
+  }
+
+  if (normalizedCategory === "tracker" || normalizedCategory === "trackers") {
+    return "Tracker";
+  }
+
+  return classifyDomainType(domain);
 }
 
 function openAddDomainModal() {
@@ -583,3 +746,4 @@ allowlistSearchInput.addEventListener("input", () => {
 });
 
 loadDashboard();
+startDashboardAutoSync();

@@ -8,10 +8,13 @@
     "tabs",
     "webRequest",
     "webNavigation",
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "alarms"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "<all_urls>",
+    "http://127.0.0.1:4780/*",
+    "http://localhost:4780/*"
   ],
   "background": {
     "service_worker": "src/background.js"
