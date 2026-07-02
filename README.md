@@ -6,7 +6,7 @@ This repository contains the privacy policy for **The Blocker**, a browser exten
 
 You can read the privacy policy here:
 
-[Privacy Policy](./PRIVACY.md)
+[Privacy Policy](./POLICY.md)
 
 ## About The Blocker
 
