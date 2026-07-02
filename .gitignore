@@ -16,6 +16,9 @@
 /apps/blocker-ui/src-tauri/target/
 /apps/blocker-ui/src-tauri/gen/
 
+# Tauri generated bundles/installers
+/apps/blocker-ui/src-tauri/target/release/bundle/
+
 # Node / Vite / frontend
 /apps/blocker-ui/node_modules/
 /apps/blocker-ui/dist/
@@ -66,14 +69,33 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+# Windows installer / bundle output
+/apps/blocker-ui/src-tauri/target/release/bundle/
+/apps/blocker-ui/src-tauri/target/release/*.exe
+/apps/blocker-ui/src-tauri/target/release/*.pdb
+
 # IDE/editor
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Tauri generated bundles/installers
-/apps/blocker-ui/src-tauri/target/release/bundle/
+# Keep the binaries folder if you add a placeholder
+!/apps/blocker-ui/src-tauri/binaries/.gitkeep
+
+# Release checksum files
+/SHA256SUMS.txt
+/SHA256SUMS.txt.asc
+
+# Generated icon/archive packages
+/the-blocker-icons.zip
+/fixed-the-blocker-rules.zip
+
+# Rule repair backups
+/apps/blocker-extension/rules/*.backup.json
+/apps/blocker-extension/rules/*.broken.backup.json
+/apps/blocker-extension-release/rules/*.backup.json
+/apps/blocker-extension-release/rules/*.broken.backup.json
 
 # Temporary files
 tmp/

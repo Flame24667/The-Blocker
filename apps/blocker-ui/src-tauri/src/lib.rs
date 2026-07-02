@@ -1,17 +1,31 @@
 use std::io::{Read, Write};
 use std::net::TcpStream;
 use std::time::Duration;
+use std::sync::Mutex;
+use tauri::{Manager, RunEvent};
+use tauri_plugin_shell::process::{CommandChild, CommandEvent};
+use tauri_plugin_shell::ShellExt;
+
+struct BackendSidecar {
+    child: Mutex<Option<CommandChild>>,
+}
 
 use tauri::{
     menu::MenuBuilder,
     tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent},
-    Manager, WindowEvent,
+    WindowEvent,
 };
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .manage(BackendSidecar {
+            child: Mutex::new(None),
+        })
+        .plugin(tauri_plugin_shell::init())
         .setup(|app| {
+            start_backend_sidecar(app)?;
+
             let menu = MenuBuilder::new(app)
                 .text("open", "Open The Blocker")
                 .separator()
@@ -73,8 +87,18 @@ pub fn run() {
                 }
             }
         })
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .build(tauri::generate_context!())
+        .expect("error while building tauri application")
+        .run(|app_handle, event| {
+            if let RunEvent::ExitRequested { .. } = event {
+                let state = app_handle.state::<BackendSidecar>();
+                let mut guard = state.child.lock().expect("backend sidecar lock poisoned");
+
+                if let Some(child) = guard.take() {
+                    let _ = child.kill();
+                }
+            }
+        });
 }
 
 fn show_main_window(app_handle: &tauri::AppHandle) {
@@ -111,4 +135,50 @@ fn post_api(path: &str) -> std::io::Result<String> {
     stream.read_to_string(&mut response)?;
 
     Ok(response)
+}
+
+fn start_backend_sidecar(app: &tauri::App) -> Result<(), Box<dyn std::error::Error>> {
+    let app_data_dir = app.path().app_data_dir()?;
+    std::fs::create_dir_all(&app_data_dir)?;
+
+    let db_path = app_data_dir.join("blocker.db");
+    let db_path_string = db_path.to_string_lossy().to_string();
+
+    let sidecar_command = app
+        .shell()
+        .sidecar("blocker-cli")?
+        .args(["dev-run", "--db", db_path_string.as_str()]);
+
+    let (mut rx, child) = sidecar_command.spawn()?;
+
+    {
+        let state = app.state::<BackendSidecar>();
+        let mut guard = state.child.lock().expect("backend sidecar lock poisoned");
+        *guard = Some(child);
+    }
+
+    tauri::async_runtime::spawn(async move {
+        while let Some(event) = rx.recv().await {
+            match event {
+                CommandEvent::Stdout(line) => {
+                    println!(
+                        "[blocker-backend] {}",
+                        String::from_utf8_lossy(&line).trim()
+                    );
+                }
+                CommandEvent::Stderr(line) => {
+                    eprintln!(
+                        "[blocker-backend] {}",
+                        String::from_utf8_lossy(&line).trim()
+                    );
+                }
+                CommandEvent::Terminated(payload) => {
+                    eprintln!("[blocker-backend] terminated: {:?}", payload);
+                }
+                _ => {}
+            }
+        }
+    });
+
+    Ok(())
 }
