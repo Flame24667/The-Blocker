@@ -11,9 +11,3 @@ You can read the privacy policy here:
 ## About The Blocker
 
 The Blocker is designed to reduce unwanted ads and tracking requests while giving users more transparency about blocked ads and trackers during browsing.
-
-## Contact
-
-For questions about this privacy policy, please contact:
-
-your-email@example.com
