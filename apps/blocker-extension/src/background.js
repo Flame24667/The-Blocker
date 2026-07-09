@@ -3,6 +3,7 @@ const DESKTOP_API_BASE = "http://127.0.0.1:4780";
 const DESKTOP_API_TIMEOUT_MS = 1000;
 const DESKTOP_SYNC_ALARM = "the-blocker-desktop-sync";
 const DESKTOP_SYNC_PERIOD_MINUTES = 1;
+const BLOCKED_RESPONSE_URL = `${DESKTOP_API_BASE}/blocked-response`;
 
 const RESOURCE_TYPES = [
   "main_frame",
@@ -338,7 +339,10 @@ async function blockDomain(domain, metadata = {}, options = {}) {
     id: ruleId,
     priority: 1,
     action: {
-      type: "block",
+      type: "redirect",
+      redirect: {
+        url: `${BLOCKED_RESPONSE_URL}?domain=${encodeURIComponent(normalizedDomain)}`,
+      },
     },
     condition: {
       urlFilter: `||${normalizedDomain}^`,
@@ -513,7 +517,10 @@ async function rebuildUserDynamicRulesWithoutMainFrame() {
       id: item.ruleId,
       priority: 1,
       action: {
-        type: "block",
+        type: "redirect",
+        redirect: {
+          url: `${BLOCKED_RESPONSE_URL}?domain=${encodeURIComponent(item.domain)}`,
+        },
       },
       condition: {
         urlFilter: `||${item.domain}^`,

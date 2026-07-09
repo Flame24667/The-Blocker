@@ -1,13 +1,13 @@
-﻿[
+[
     {
         "id":  900001,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adtago.s3.amazonaws.com^ ||analyticsengine.s3.amazonaws.com^ ||analytics.s3.amazonaws.com^ ||advice-ads.s3.amazonaws.com^ ||pagead2.googlesyndication.com^ ||adservice.google.com^ ||pagead2.googleadservices.com^ ||afs.googlesyndication.com^ ||ad.doubleclick.net^ ||static.doubleclick.net^ ||m.doubleclick.net^ ||mediavisor.doubleclick.net^ ||ads30.adcolony.com^ ||adc3-launch.adcolony.com^ ||events3alt.adcolony.com^ ||wd.adcolony.com^ ||static.media.net^ ||media.net^ ||adservetx.media.net^ /ads.js /pagead.js /ad.js /advertisement.js /advertising.js /widget/ads. /adsbygoogle.js",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adtago.s3.amazonaws.com^ ||analyticsengine.s3.amazonaws.com^ ||analytics.s3.amazonaws.com^ ||advice-ads.s3.amazonaws.com^ ||pagead2.googlesyndication.com^ ||adservice.google.com^ ||pagead2.googleadservices.com^ ||afs.googlesyndication.com^ ||ad.doubleclick.net^ ||static.doubleclick.net^ ||m.doubleclick.net^ ||mediavisor.doubleclick.net^ ||ads30.adcolony.com^ ||adc3-launch.adcolony.com^ ||events3alt.adcolony.com^ ||wd.adcolony.com^ ||static.media.net^ ||media.net^ ||adservetx.media.net^ /ads.js /pagead.js /ad.js /advertisement.js /advertising.js /widget/ads. /adsbygoogle.js",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -20,17 +20,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900002,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||static.criteo.net^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||static.criteo.net^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -43,111 +43,111 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900003,
         "priority":  30,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "/ads.js",
-                          "resourceTypes":  [
+                        "urlFilter":  "/ads.js",
+                        "resourceTypes":  [
                                                 "script",
                                                 "xmlhttprequest",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900004,
         "priority":  30,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "/pagead.js",
-                          "resourceTypes":  [
+                        "urlFilter":  "/pagead.js",
+                        "resourceTypes":  [
                                                 "script",
                                                 "xmlhttprequest",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900005,
         "priority":  30,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "/ad.js",
-                          "resourceTypes":  [
+                        "urlFilter":  "/ad.js",
+                        "resourceTypes":  [
                                                 "script",
                                                 "xmlhttprequest",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900006,
         "priority":  30,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "/advertisement.js",
-                          "resourceTypes":  [
+                        "urlFilter":  "/advertisement.js",
+                        "resourceTypes":  [
                                                 "script",
                                                 "xmlhttprequest",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900007,
         "priority":  30,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "/advertising.js",
-                          "resourceTypes":  [
+                        "urlFilter":  "/advertising.js",
+                        "resourceTypes":  [
                                                 "script",
                                                 "xmlhttprequest",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900008,
         "priority":  30,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "/widget/ads.",
-                          "resourceTypes":  [
+                        "urlFilter":  "/widget/ads.",
+                        "resourceTypes":  [
                                                 "script",
                                                 "xmlhttprequest",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  900009,
         "priority":  30,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "/adsbygoogle.js",
-                          "resourceTypes":  [
+                        "urlFilter":  "/adsbygoogle.js",
+                        "resourceTypes":  [
                                                 "script",
                                                 "xmlhttprequest",
                                                 "other"
                                             ]
-                      }
+                    }
     }
 ]

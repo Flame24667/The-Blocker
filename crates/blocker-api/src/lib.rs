@@ -200,6 +200,14 @@ fn handle_api_request(db_path: &str, request: &HttpRequest) -> HttpResponse {
             }
         }
 
+        ("GET", "/blocked-response") => {
+            HttpResponse::json(
+                500,
+                "Internal Server Error",
+                r#"{"ok":false,"blocked":true,"error":"blocked_by_the_blocker"}"#.to_string(),
+            )
+        }
+
         ("POST", "/blocklist/add") => {
             let Some(domain) = query_param(query, "domain") else {
                 return error_response(400, "Bad Request", "missing domain");

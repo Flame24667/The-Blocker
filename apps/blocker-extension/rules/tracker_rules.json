@@ -1,13 +1,13 @@
-﻿[
+[
     {
         "id":  910001,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||analytics.google.com^ ||click.googleanalytics.com^ ||mouseflow.com^ ||cdn.mouseflow.com^ ||api.mouseflow.com^ ||tools.mouseflow.com^ ||luckyorange.com^ ||api.luckyorange.com^ ||realtime.luckyorange.com^ ||cdn.luckyorange.com^ ||w1.luckyorange.com^ ||upload.luckyorange.net^ ||cs.luckyorange.net^ ||settings.luckyorange.net^ ||freshmarketer.com^ ||claritybt.freshmarketer.com^ ||fwtracks.freshmarketer.com^ ||notify.bugsnag.com^ ||sessions.bugsnag.com^ ||api.bugsnag.com^ ||app.bugsnag.com^ ||browser.sentry-cdn.com^ ||app.getsentry.com^ ||pixel.facebook.com^ ||an.facebook.com^ ||ads-api.twitter.com^ ||ads.pinterest.com^ ||log.pinterest.com^ ||trk.pinterest.com^ ||events.redditmedia.com^ ||ads.youtube.com^ ||ads-api.tiktok.com^ ||ads-sg.tiktok.com^ ||analytics-sg.tiktok.com^ ||business-api.tiktok.com^ ||ads.tiktok.com^ ||log.byteoversea.com^ ||ads.yahoo.com^ ||analytics.yahoo.com^ ||geo.yahoo.com^ ||udcm.yahoo.com^ ||analytics.query.yahoo.com^ ||partnerads.ysm.yahoo.com^ ||log.fc.yahoo.com^ ||gemini.yahoo.com^ ||adtech.yahooinc.com^ ||appmetrica.yandex.ru^ ||adfstat.yandex.ru^ ||metrika.yandex.ru^ ||adfox.yandex.ru^ ||auction.unityads.unity3d.com^ ||webview.unityads.unity3d.com^ ||config.unityads.unity3d.com^ ||adserver.unityads.unity3d.com^ ||iot-eu-logser.realme.com^ ||iot-logser.realme.com^ ||bdapi-ads.realmemobile.com^ ||bdapi-in-ads.realmemobile.com^ ||adsfs.oppomobile.com^ ||adx.ads.oppomobile.com^ ||ck.ads.oppomobile.com^ ||data.ads.oppomobile.com^ ||iadsdk.apple.com^ ||metrics.icloud.com^ ||metrics.mzstatic.com^ ||api-adservices.apple.com^ ||books-analytics-events.apple.com^ ||weather-analytics-events.apple.com^ ||api.ad.xiaomi.com^ ||data.mistat.xiaomi.com^ ||data.mistat.india.xiaomi.com^ ||data.mistat.rus.xiaomi.com^ ||sdkconfig.ad.xiaomi.com^ ||tracking.rus.miui.com^ ||metrics.data.hicloud.com^ ||metrics2.data.hicloud.com^ ||grs.hicloud.com^ ||logservice.hicloud.com^ ||logservice1.hicloud.com^ ||logbak.hicloud.com^ ||samsungads.com^ ||smetrics.samsung.com^ ||samsung-com.112.2o7.net^ ||analytics-api.samsunghealthcn.com^ ||google-analytics.com^ ||ssl.google-analytics.com^ ||adm.hotjar.com^ ||identify.hotjar.com^ ||insights.hotjar.com^ ||script.hotjar.com^ ||surveys.hotjar.com^ ||events.reddit.com^ ||analytics.tiktok.com^ ||sdkconfig.ad.intl.xiaomi.com^ ||cdn.mxpnl.com^ ||analytics.google.com^ ||click.googleanalytics.com^ ||mouseflow.com^ ||cdn.mouseflow.com^ ||api.mouseflow.com^ ||tools.mouseflow.com^ ||luckyorange.com^ ||api.luckyorange.com^ ||realtime.luckyorange.com^ ||cdn.luckyorange.com^ ||w1.luckyorange.com^ ||upload.luckyorange.net^ ||cs.luckyorange.net^ ||settings.luckyorange.net^ ||freshmarketer.com^ ||claritybt.freshmarketer.com^ ||fwtracks.freshmarketer.com^ ||notify.bugsnag.com^ ||sessions.bugsnag.com^ ||api.bugsnag.com^ ||app.bugsnag.com^ ||browser.sentry-cdn.com^ ||app.getsentry.com^ ||pixel.facebook.com^ ||an.facebook.com^ ||ads-api.twitter.com^ ||ads.pinterest.com^ ||log.pinterest.com^ ||trk.pinterest.com^ ||events.redditmedia.com^ ||ads.youtube.com^ ||ads-api.tiktok.com^ ||ads-sg.tiktok.com^ ||analytics-sg.tiktok.com^ ||business-api.tiktok.com^ ||ads.tiktok.com^ ||log.byteoversea.com^ ||ads.yahoo.com^ ||analytics.yahoo.com^ ||geo.yahoo.com^ ||udcm.yahoo.com^ ||analytics.query.yahoo.com^ ||partnerads.ysm.yahoo.com^ ||log.fc.yahoo.com^ ||gemini.yahoo.com^ ||adtech.yahooinc.com^ ||appmetrica.yandex.ru^ ||adstat.yandex.ru^ ||metrika.yandex.ru^ ||adfox.yandex.ru^ ||auction.unityads.unity3d.com^ ||webview.unityads.unity3d.com^ ||config.unityads.unity3d.com^ ||adserver.unityads.unity3d.com^ ||iot-eu-logser.realme.com^ ||iot-logser.realme.com^ ||bdapi-ads.realmemobile.com^ ||bdapi-in-ads.realmemobile.com^ ||adsfs.oppomobile.com^ ||adx.ads.oppomobile.com^ ||ck.ads.oppomobile.com^ ||data.ads.oppomobile.com^ ||iadsdk.apple.com^ ||metrics.icloud.com^ ||metrics.mzstatic.com^ ||api-adservices.apple.com^ ||books-analytics-events.apple.com^ ||weather-analytics-events.apple.com^ ||api.ad.xiaomi.com^ ||data.mistat.xiaomi.com^ ||data.mistat.india.xiaomi.com^ ||data.mistat.rus.xiaomi.com^ ||sdkconfig.ad.xiaomi.com^ ||tracking.rus.miui.com^ ||metrics.data.hicloud.com^ ||metrics2.data.hicloud.com^ ||grs.hicloud.com^ ||logservice.hicloud.com^ ||logservice1.hicloud.com^ ||logbak.hicloud.com^ ||samsungads.com^ ||smetrics.samsung.com^ ||samsung-com.112.2o7.net^ ||analytics-api.samsunghealthcn.com^ ||google-analytics.com^ ||ssl.google-analytics.com^ ||adm.hotjar.com^ ||identify.hotjar.com^ ||insights.hotjar.com^ ||script.hotjar.com^ ||surveys.hotjar.com^ ||events.reddit.com^ ||analytics.tiktok.com^ ||sdkconfig.ad.intl.xiaomi.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||analytics.google.com^ ||click.googleanalytics.com^ ||mouseflow.com^ ||cdn.mouseflow.com^ ||api.mouseflow.com^ ||tools.mouseflow.com^ ||luckyorange.com^ ||api.luckyorange.com^ ||realtime.luckyorange.com^ ||cdn.luckyorange.com^ ||w1.luckyorange.com^ ||upload.luckyorange.net^ ||cs.luckyorange.net^ ||settings.luckyorange.net^ ||freshmarketer.com^ ||claritybt.freshmarketer.com^ ||fwtracks.freshmarketer.com^ ||notify.bugsnag.com^ ||sessions.bugsnag.com^ ||api.bugsnag.com^ ||app.bugsnag.com^ ||browser.sentry-cdn.com^ ||app.getsentry.com^ ||pixel.facebook.com^ ||an.facebook.com^ ||ads-api.twitter.com^ ||ads.pinterest.com^ ||log.pinterest.com^ ||trk.pinterest.com^ ||events.redditmedia.com^ ||ads.youtube.com^ ||ads-api.tiktok.com^ ||ads-sg.tiktok.com^ ||analytics-sg.tiktok.com^ ||business-api.tiktok.com^ ||ads.tiktok.com^ ||log.byteoversea.com^ ||ads.yahoo.com^ ||analytics.yahoo.com^ ||geo.yahoo.com^ ||udcm.yahoo.com^ ||analytics.query.yahoo.com^ ||partnerads.ysm.yahoo.com^ ||log.fc.yahoo.com^ ||gemini.yahoo.com^ ||adtech.yahooinc.com^ ||appmetrica.yandex.ru^ ||adfstat.yandex.ru^ ||metrika.yandex.ru^ ||adfox.yandex.ru^ ||auction.unityads.unity3d.com^ ||webview.unityads.unity3d.com^ ||config.unityads.unity3d.com^ ||adserver.unityads.unity3d.com^ ||iot-eu-logser.realme.com^ ||iot-logser.realme.com^ ||bdapi-ads.realmemobile.com^ ||bdapi-in-ads.realmemobile.com^ ||adsfs.oppomobile.com^ ||adx.ads.oppomobile.com^ ||ck.ads.oppomobile.com^ ||data.ads.oppomobile.com^ ||iadsdk.apple.com^ ||metrics.icloud.com^ ||metrics.mzstatic.com^ ||api-adservices.apple.com^ ||books-analytics-events.apple.com^ ||weather-analytics-events.apple.com^ ||api.ad.xiaomi.com^ ||data.mistat.xiaomi.com^ ||data.mistat.india.xiaomi.com^ ||data.mistat.rus.xiaomi.com^ ||sdkconfig.ad.xiaomi.com^ ||tracking.rus.miui.com^ ||metrics.data.hicloud.com^ ||metrics2.data.hicloud.com^ ||grs.hicloud.com^ ||logservice.hicloud.com^ ||logservice1.hicloud.com^ ||logbak.hicloud.com^ ||samsungads.com^ ||smetrics.samsung.com^ ||samsung-com.112.2o7.net^ ||analytics-api.samsunghealthcn.com^ ||google-analytics.com^ ||ssl.google-analytics.com^ ||adm.hotjar.com^ ||identify.hotjar.com^ ||insights.hotjar.com^ ||script.hotjar.com^ ||surveys.hotjar.com^ ||events.reddit.com^ ||analytics.tiktok.com^ ||sdkconfig.ad.intl.xiaomi.com^ ||cdn.mxpnl.com^ ||analytics.google.com^ ||click.googleanalytics.com^ ||mouseflow.com^ ||cdn.mouseflow.com^ ||api.mouseflow.com^ ||tools.mouseflow.com^ ||luckyorange.com^ ||api.luckyorange.com^ ||realtime.luckyorange.com^ ||cdn.luckyorange.com^ ||w1.luckyorange.com^ ||upload.luckyorange.net^ ||cs.luckyorange.net^ ||settings.luckyorange.net^ ||freshmarketer.com^ ||claritybt.freshmarketer.com^ ||fwtracks.freshmarketer.com^ ||notify.bugsnag.com^ ||sessions.bugsnag.com^ ||api.bugsnag.com^ ||app.bugsnag.com^ ||browser.sentry-cdn.com^ ||app.getsentry.com^ ||pixel.facebook.com^ ||an.facebook.com^ ||ads-api.twitter.com^ ||ads.pinterest.com^ ||log.pinterest.com^ ||trk.pinterest.com^ ||events.redditmedia.com^ ||ads.youtube.com^ ||ads-api.tiktok.com^ ||ads-sg.tiktok.com^ ||analytics-sg.tiktok.com^ ||business-api.tiktok.com^ ||ads.tiktok.com^ ||log.byteoversea.com^ ||ads.yahoo.com^ ||analytics.yahoo.com^ ||geo.yahoo.com^ ||udcm.yahoo.com^ ||analytics.query.yahoo.com^ ||partnerads.ysm.yahoo.com^ ||log.fc.yahoo.com^ ||gemini.yahoo.com^ ||adtech.yahooinc.com^ ||appmetrica.yandex.ru^ ||adstat.yandex.ru^ ||metrika.yandex.ru^ ||adfox.yandex.ru^ ||auction.unityads.unity3d.com^ ||webview.unityads.unity3d.com^ ||config.unityads.unity3d.com^ ||adserver.unityads.unity3d.com^ ||iot-eu-logser.realme.com^ ||iot-logser.realme.com^ ||bdapi-ads.realmemobile.com^ ||bdapi-in-ads.realmemobile.com^ ||adsfs.oppomobile.com^ ||adx.ads.oppomobile.com^ ||ck.ads.oppomobile.com^ ||data.ads.oppomobile.com^ ||iadsdk.apple.com^ ||metrics.icloud.com^ ||metrics.mzstatic.com^ ||api-adservices.apple.com^ ||books-analytics-events.apple.com^ ||weather-analytics-events.apple.com^ ||api.ad.xiaomi.com^ ||data.mistat.xiaomi.com^ ||data.mistat.india.xiaomi.com^ ||data.mistat.rus.xiaomi.com^ ||sdkconfig.ad.xiaomi.com^ ||tracking.rus.miui.com^ ||metrics.data.hicloud.com^ ||metrics2.data.hicloud.com^ ||grs.hicloud.com^ ||logservice.hicloud.com^ ||logservice1.hicloud.com^ ||logbak.hicloud.com^ ||samsungads.com^ ||smetrics.samsung.com^ ||samsung-com.112.2o7.net^ ||analytics-api.samsunghealthcn.com^ ||google-analytics.com^ ||ssl.google-analytics.com^ ||adm.hotjar.com^ ||identify.hotjar.com^ ||insights.hotjar.com^ ||script.hotjar.com^ ||surveys.hotjar.com^ ||events.reddit.com^ ||analytics.tiktok.com^ ||sdkconfig.ad.intl.xiaomi.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -20,17 +20,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910002,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||cdn.mxpnl.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||cdn.mxpnl.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -43,17 +43,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910003,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||mouseflow.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||mouseflow.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -66,17 +66,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910004,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||cdn.mouseflow.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||cdn.mouseflow.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -89,17 +89,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910005,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||api.mouseflow.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||api.mouseflow.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -112,17 +112,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910006,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||tools.mouseflow.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||tools.mouseflow.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -135,17 +135,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910007,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||luckyorange.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||luckyorange.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -158,17 +158,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910008,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||api.luckyorange.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||api.luckyorange.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -181,17 +181,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910009,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||realtime.luckyorange.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||realtime.luckyorange.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -204,17 +204,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910010,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||cdn.luckyorange.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||cdn.luckyorange.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -227,17 +227,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910011,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||w1.luckyorange.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||w1.luckyorange.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -250,17 +250,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910012,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||upload.luckyorange.net^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||upload.luckyorange.net^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -273,17 +273,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910013,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||cs.luckyorange.net^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||cs.luckyorange.net^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -296,17 +296,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910014,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||settings.luckyorange.net^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||settings.luckyorange.net^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -319,17 +319,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910015,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||freshmarketer.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||freshmarketer.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -342,17 +342,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910016,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||claritybt.freshmarketer.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||claritybt.freshmarketer.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -365,17 +365,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910017,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||fwtracks.freshmarketer.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||fwtracks.freshmarketer.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -388,17 +388,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910018,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||notify.bugsnag.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||notify.bugsnag.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -411,17 +411,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910019,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||sessions.bugsnag.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||sessions.bugsnag.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -434,17 +434,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910020,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||api.bugsnag.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||api.bugsnag.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -457,17 +457,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910021,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||app.bugsnag.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||app.bugsnag.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -480,17 +480,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910022,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||browser.sentry-cdn.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||browser.sentry-cdn.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -503,17 +503,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910023,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||app.getsentry.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||app.getsentry.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -526,17 +526,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910024,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||pixel.facebook.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||pixel.facebook.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -549,17 +549,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910025,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||an.facebook.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||an.facebook.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -572,17 +572,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910026,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ads-api.twitter.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ads-api.twitter.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -595,17 +595,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910027,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ads.pinterest.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ads.pinterest.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -618,17 +618,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910028,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||log.pinterest.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||log.pinterest.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -641,17 +641,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910029,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||trk.pinterest.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||trk.pinterest.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -664,17 +664,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910030,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||events.redditmedia.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||events.redditmedia.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -687,17 +687,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910031,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ads.youtube.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ads.youtube.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -710,17 +710,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910032,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ads-api.tiktok.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ads-api.tiktok.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -733,17 +733,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910033,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ads-sg.tiktok.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ads-sg.tiktok.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -756,17 +756,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910034,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||analytics-sg.tiktok.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||analytics-sg.tiktok.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -779,17 +779,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910035,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||business-api.tiktok.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||business-api.tiktok.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -802,17 +802,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910036,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ads.tiktok.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ads.tiktok.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -825,17 +825,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910037,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||log.byteoversea.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||log.byteoversea.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -848,17 +848,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910038,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ads.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ads.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -871,17 +871,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910039,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||analytics.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||analytics.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -894,17 +894,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910040,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||geo.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||geo.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -917,17 +917,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910041,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||udcm.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||udcm.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -940,17 +940,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910042,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||analytics.query.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||analytics.query.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -963,17 +963,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910043,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||partnerads.ysm.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||partnerads.ysm.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -986,17 +986,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910044,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||log.fc.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||log.fc.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1009,17 +1009,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910045,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||gemini.yahoo.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||gemini.yahoo.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1032,17 +1032,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910046,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adtech.yahooinc.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adtech.yahooinc.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1055,17 +1055,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910047,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||appmetrica.yandex.ru^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||appmetrica.yandex.ru^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1078,17 +1078,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910048,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adfstat.yandex.ru^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adfstat.yandex.ru^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1101,17 +1101,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910049,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||metrika.yandex.ru^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||metrika.yandex.ru^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1124,17 +1124,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910050,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adfox.yandex.ru^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adfox.yandex.ru^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1147,17 +1147,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910051,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||auction.unityads.unity3d.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||auction.unityads.unity3d.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1170,17 +1170,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910052,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||webview.unityads.unity3d.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||webview.unityads.unity3d.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1193,17 +1193,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910053,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||config.unityads.unity3d.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||config.unityads.unity3d.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1216,17 +1216,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910054,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adserver.unityads.unity3d.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adserver.unityads.unity3d.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1239,17 +1239,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910055,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||iot-eu-logser.realme.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||iot-eu-logser.realme.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1262,17 +1262,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910056,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||iot-logser.realme.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||iot-logser.realme.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1285,17 +1285,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910057,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||bdapi-ads.realmemobile.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||bdapi-ads.realmemobile.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1308,17 +1308,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910058,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||bdapi-in-ads.realmemobile.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||bdapi-in-ads.realmemobile.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1331,17 +1331,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910059,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adsfs.oppomobile.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adsfs.oppomobile.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1354,17 +1354,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910060,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adx.ads.oppomobile.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adx.ads.oppomobile.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1377,17 +1377,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910061,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ck.ads.oppomobile.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ck.ads.oppomobile.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1400,17 +1400,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910062,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||data.ads.oppomobile.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||data.ads.oppomobile.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1423,17 +1423,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910063,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||iadsdk.apple.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||iadsdk.apple.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1446,17 +1446,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910064,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||metrics.icloud.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||metrics.icloud.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1469,17 +1469,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910065,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||metrics.mzstatic.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||metrics.mzstatic.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1492,17 +1492,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910066,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||api-adservices.apple.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||api-adservices.apple.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1515,17 +1515,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910067,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||books-analytics-events.apple.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||books-analytics-events.apple.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1538,17 +1538,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910068,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||weather-analytics-events.apple.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||weather-analytics-events.apple.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1561,17 +1561,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910069,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||api.ad.xiaomi.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||api.ad.xiaomi.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1584,17 +1584,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910070,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||data.mistat.xiaomi.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||data.mistat.xiaomi.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1607,17 +1607,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910071,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||data.mistat.india.xiaomi.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||data.mistat.india.xiaomi.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1630,17 +1630,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910072,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||data.mistat.rus.xiaomi.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||data.mistat.rus.xiaomi.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1653,17 +1653,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910073,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||sdkconfig.ad.xiaomi.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||sdkconfig.ad.xiaomi.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1676,17 +1676,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910074,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||tracking.rus.miui.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||tracking.rus.miui.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1699,17 +1699,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910075,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||metrics.data.hicloud.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||metrics.data.hicloud.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1722,17 +1722,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910076,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||metrics2.data.hicloud.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||metrics2.data.hicloud.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1745,17 +1745,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910077,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||grs.hicloud.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||grs.hicloud.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1768,17 +1768,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910078,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||logservice.hicloud.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||logservice.hicloud.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1791,17 +1791,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910079,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||logservice1.hicloud.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||logservice1.hicloud.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1814,17 +1814,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910080,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||logbak.hicloud.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||logbak.hicloud.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1837,17 +1837,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910081,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||samsungads.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||samsungads.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1860,17 +1860,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910082,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||smetrics.samsung.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||smetrics.samsung.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1883,17 +1883,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910083,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||samsung-com.112.2o7.net^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||samsung-com.112.2o7.net^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1906,17 +1906,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910084,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||analytics-api.samsunghealthcn.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||analytics-api.samsunghealthcn.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1929,17 +1929,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910085,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||google-analytics.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||google-analytics.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1952,17 +1952,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910086,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||ssl.google-analytics.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||ssl.google-analytics.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1975,17 +1975,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910087,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adm.hotjar.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adm.hotjar.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -1998,17 +1998,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910088,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||identify.hotjar.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||identify.hotjar.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2021,17 +2021,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910089,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||insights.hotjar.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||insights.hotjar.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2044,17 +2044,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910090,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||script.hotjar.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||script.hotjar.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2067,17 +2067,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910091,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||surveys.hotjar.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||surveys.hotjar.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2090,17 +2090,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910092,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||events.reddit.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||events.reddit.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2113,17 +2113,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910093,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||analytics.tiktok.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||analytics.tiktok.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2136,17 +2136,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910094,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||sdkconfig.ad.intl.xiaomi.com^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||sdkconfig.ad.intl.xiaomi.com^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2159,17 +2159,17 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     },
     {
         "id":  910095,
         "priority":  20,
         "action":  {
-                       "type":  "block"
-                   },
+                        "type":  "block"
+                    },
         "condition":  {
-                          "urlFilter":  "||adfstat.yandex.ru^",
-                          "resourceTypes":  [
+                        "urlFilter":  "||adfstat.yandex.ru^",
+                        "resourceTypes":  [
                                                 "sub_frame",
                                                 "stylesheet",
                                                 "script",
@@ -2182,6 +2182,6 @@
                                                 "websocket",
                                                 "other"
                                             ]
-                      }
+                    }
     }
 ]
